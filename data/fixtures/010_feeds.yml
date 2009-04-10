@@ -11,7 +11,7 @@ Feed:
         
     delicious:
         title: Delicious Bookmarks
-        link:
+        link: http://feeds.delicious.com/v2/rss/isofarro?count=15
         type: links
         
     isolani:
