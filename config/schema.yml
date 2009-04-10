@@ -1,0 +1,34 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  feed:
+    _attributes: { phpName: Feed }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    title: { type: VARCHAR, size: '255', required: false }
+    link: { type: VARCHAR, size: '255', required: true }
+    type: { type: VARCHAR, size: '32', required: false }
+    _uniques: { feed_U_1: [link] }
+  item:
+    _attributes: { phpName: Item }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    feed_id: { type: INTEGER, size: '11', required: true, foreignTable: feed, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    atomid: { type: VARCHAR, size: '255', required: true }
+    title: { type: LONGVARCHAR, required: true }
+    link: { type: VARCHAR, size: '255', required: true }
+    description: { type: LONGVARCHAR, required: true }
+    published: { type: TIMESTAMP, required: true }
+    _indexes: { item_FI_1: [feed_id] }
+    _uniques: { item_U_1: [atomid], item_U_2: [link] }
+  site:
+    _attributes: { phpName: Site }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    title: { type: VARCHAR, size: '255', required: false }
+    baseurl: { type: VARCHAR, size: '255', required: true }
+  sitefeed:
+    _attributes: { phpName: Sitefeed }
+    site_id: { type: INTEGER, size: '11', required: true, foreignTable: site, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    feed_id: { type: INTEGER, size: '11', required: true, foreignTable: feed, foreignReference: id, onDelete: RESTRICT, onUpdate: RESTRICT }
+    collection: { type: VARCHAR, size: '32', required: false }
+    id: { type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _indexes: { sitefeed_FI_1: [site_id], sitefeed_FI_2: [feed_id] }
