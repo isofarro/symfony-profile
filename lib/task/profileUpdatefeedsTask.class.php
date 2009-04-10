@@ -37,7 +37,6 @@ EOF;
 
 		// Get all the listed feeds
 		$feeds = FeedPeer::doSelect(new Criteria());
-		//print_r($feeds);
 		
 		foreach($feeds as $feed) {
 			$newItems       = $this->updateFeed($feed);
