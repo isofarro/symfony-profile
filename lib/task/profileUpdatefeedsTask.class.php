@@ -21,7 +21,7 @@ class profileUpdatefeedsTask extends sfPropelBaseTask {
 		$this->name             = 'update-feeds';
 		$this->briefDescription = 'Updates profile feeds';
 		$this->detailedDescription = <<<EOF
-The [profile:update-feeds|INFO] task updates all the feeds.
+The [profile:update-feeds|INFO] task updates all the feeds from the Feed table.
 Call it with:
 
 	[php symfony profile:update-feeds|INFO]
@@ -36,6 +36,7 @@ EOF;
 		$totalNewItems = 0;
 
 		// Get all the listed feeds
+		// TODO: Process only active feeds.
 		$feeds = FeedPeer::doSelect(new Criteria());
 		
 		foreach($feeds as $feed) {
@@ -96,6 +97,10 @@ EOF;
 		return $newItems;
 	}
 	
+	/**
+	* Gets the normalised feed from the given URL.
+	* Returns a PHP data object representing the feed.
+	**/
 	protected function getFeed($feedUrl) {
 		if (empty($this->parser)) {
 			// TODO: Bring the FeedParser into the lib directory when complete
