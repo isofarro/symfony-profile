@@ -40,7 +40,7 @@ EOF;
 		//print_r($feeds);
 		
 		foreach($feeds as $feed) {
-			$newItems = $this->updateFeed($feed);
+			$newItems       = $this->updateFeed($feed);
 			$totalNewItems += $newItems;
 			break;
 		}
@@ -57,14 +57,21 @@ EOF;
 		
 		$itemCriteria = new Criteria();
 		$newItems     = 0;
+		
+		// Short circuit if the feed parsing failed
+		if (empty($feed) || empty($feed->entries)) {
+			echo "ERROR: Returned feed not valid, or empty\n";
+			return 0;
+		}
 
 		foreach($feed->entries as $entry) {
 			//echo $entry->title, "\n";
 			
-			// Check whether this entry already exists, and skip if it does
+			// Check whether this entry already exists
 			$itemCriteria->add(ItemPeer::ATOMID, $entry->id, Criteria::EQUAL);
 			$num = ItemPeer::doCount($itemCriteria);
 			
+			// Skip the current entry if we already have it
 			if ($num>0) {
 				//echo "INFO: Duplicate atom id: {$entry->id}. Skipping\n";
 				continue;
@@ -81,9 +88,9 @@ EOF;
 			));
 			
 			$item->setFeed($feedRecord);
-			
 			//print_r($item);
 			$item->save();
+			
 			$newItems++;
 		}
 		
