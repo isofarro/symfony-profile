@@ -1,0 +1,7 @@
+
+# Ignore editing backups
+*~
+
+# Ignore cache and log directories
+cache/*
+log/*
