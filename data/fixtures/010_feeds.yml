@@ -6,12 +6,12 @@ Feed:
         
     flickr:
         title: Isofarro's pictures
-        link: http://api.flickr.com/services/feeds/photos_public.gne?id=3051697@N00&lang=en-us&format=atom
+        link: http://api.flickr.com/services/feeds/photos_public.gne?id=30516977@N00&lang=en-us&format=atom
         type: photos
         
     delicious:
         title: Delicious Bookmarks
-        link: http://feeds.delicious.com/v2/rss/isofarro?count=15
+        link: http://feeds.delicious.com/v2/rss/isofarro?count=50
         type: links
         
     isolani:

@@ -42,7 +42,7 @@ EOF;
 		foreach($feeds as $feed) {
 			$newItems       = $this->updateFeed($feed);
 			$totalNewItems += $newItems;
-			break;
+			//break;
 		}
 		echo $totalNewItems, " new items added\n";
 	}
@@ -82,10 +82,16 @@ EOF;
 			$item->fromArray(array(
 				'Atomid'      => $entry->id,
 				'Title'       => $entry->title,
-				'Link'        => $entry->links[0]->href,
-				'Description' => $entry->content->text,
+				'Link'        => $this->getLinkHref($entry->links, 'alternate'),
+				'Description' => '',
 				'Published'   => $entry->published
 			));
+			
+			if (!empty($entry->content->text)) {
+				$item->setDescription($entry->content->text);
+			} elseif (!empty($entry->summary)) {
+				$item->setDescription($entry->summary);
+			}
 			
 			$item->setFeed($feedRecord);
 			//print_r($item);
@@ -95,6 +101,15 @@ EOF;
 		}
 		
 		return $newItems;
+	}
+	
+	protected function getLinkHref($links, $rel) {
+		foreach($links as $link) {
+			if ($link->rel==$rel) {
+				return $link->href;
+			}
+		}
+		return '';
 	}
 	
 	/**
