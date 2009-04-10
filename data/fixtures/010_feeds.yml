@@ -1,0 +1,40 @@
+Feed:
+    twitter:
+        title: Isofarro's Tweets
+        link: http://twitter.com/statuses/user_timeline/15039921.atom
+        type: summary
+        
+    flickr:
+        title: Isofarro's pictures
+        link: http://api.flickr.com/services/feeds/photos_public.gne?id=3051697@N00&lang=en-us&format=atom
+        type: photos
+        
+    delicious:
+        title: Delicious Bookmarks
+        link:
+        type: links
+        
+    isolani:
+        title: isolani
+        link: http://www.isolani.co.uk/blog/index.atom
+        type: long
+        
+    isolani_links:
+        title: Isolani links
+        link: http://www.isolani.co.uk/blog/links.atom
+        type: links
+        
+    accessibilitytips:
+        title: Accessibility Tips
+        link: http://www.accessibilitytips.com/feed/atom/
+        type: long
+        
+    internationalisationtips:
+        title: Internationalisation Tips
+        link: http://www.internationalisationtips.com/feed/atom/
+        type: long
+        
+    webstandardstips:
+        title: Web Standards Tips
+        link: http://www.webstandardstips.com/feed/atom/
+        type: long

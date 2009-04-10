@@ -1,0 +1,42 @@
+Sitefeed:
+   isofarro_1:
+      site_id: isofarro
+      feed_id: twitter
+      collection: micro
+      
+   isofarro_2:
+      site_id: isofarro
+      feed_id: flickr
+      collection: photos
+      
+   isofarro_3:
+      site_id: isofarro
+      feed_id: isolani
+      collection: blog
+      
+   isofarro_4:
+      site_id: isofarro
+      feed_id: accessibilitytips
+      collection: blog
+      
+   isofarro_5:
+      site_id: isofarro
+      feed_id: internationalisationtips
+      collection: blog
+      
+   isofarro_6:
+      site_id: isofarro
+      feed_id: webstandardstips
+      collection: blog
+      
+   isofarro_7:
+      site_id: isofarro
+      feed_id: delicious
+      collection: links
+      
+   isofarro_8:
+      site_id: isofarro
+      feed_id: isolani_links
+      collection: links
+      
+   
