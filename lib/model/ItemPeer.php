@@ -6,9 +6,11 @@ class ItemPeer extends BaseItemPeer {
 		$itemCriteria = new Criteria();
 		
 		// TODO: filter to items belonging to a site feed
-		// TODO: order by published date Descending
+
+		// order by published date Descending
+		$itemCriteria->addDescendingOrderByColumn(self::PUBLISHED);
 		
-		$items = ItemPeer::doSelect($itemCriteria);
+		$items = self::doSelect($itemCriteria);
 		return $items;
 	}
 	
