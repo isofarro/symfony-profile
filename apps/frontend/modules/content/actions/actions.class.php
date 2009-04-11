@@ -15,8 +15,10 @@ class contentActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->forward('default', 'module');
-  }
+	public function executeIndex(sfWebRequest $request) {
+		// TODO: Check for the feed filter cookie
+		
+		// Get all the entries for this site, sorted into collections
+		$this->entries = ItemPeer::getCollectedFeedItems(1);
+	}
 }

@@ -1,5 +1,3 @@
 <?php
 
-class FeedPeer extends BaseFeedPeer
-{
-}
+class FeedPeer extends BaseFeedPeer{}
