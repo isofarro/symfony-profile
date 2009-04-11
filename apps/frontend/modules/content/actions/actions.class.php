@@ -19,6 +19,8 @@ class contentActions extends sfActions
 		// TODO: Check for the feed filter cookie
 		
 		// Get all the entries for this site, sorted into collections
-		$this->entries = ItemPeer::getCollectedFeedItems(1);
+		$this->entries = ItemPeer::getCollectedFeedItems(
+			sfConfig::get('app_default_site')
+		);
 	}
 }

@@ -1,2 +1,4 @@
 # default values
-#all:
+all:
+    default_site: 1
+
