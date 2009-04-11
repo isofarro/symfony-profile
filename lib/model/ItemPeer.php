@@ -11,13 +11,18 @@ class ItemPeer extends BaseItemPeer {
 		$itemCriteria = new Criteria();
 		
 		// Get items belonging to a site feed
-		$itemCriteria->addJoin(self::FEED_ID, SitefeedPeer::FEED_ID);
+		$itemCriteria->addJoin(
+			self::FEED_ID, 
+			SitefeedPeer::FEED_ID, 
+			Criteria::LEFT_JOIN
+		);
 		$itemCriteria->add(SitefeedPeer::SITE_ID,	$site_id, Criteria::IN);
 
 		// order by published date Descending
 		$itemCriteria->addDescendingOrderByColumn(self::PUBLISHED);
 		
-		$items = self::doSelect($itemCriteria);
+		// Bring in the item data plus the feed data for each item.
+		$items = self::doSelectJoinFeed($itemCriteria);
 		return $items;
 	}
 	
