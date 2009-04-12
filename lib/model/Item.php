@@ -85,7 +85,7 @@ class Item extends BaseItem
 	public function getPhotoImage() {
 		$description = $this->getDescription();
 		
-		if (preg_match('/href="([^"]+)"/', $description, $linkMatches)) {
+		if (preg_match('/href="([^"]+)" title=/', $description, $linkMatches)) {
 			$link = $linkMatches[1];
 			if (preg_match('/src="([^"]+)"/', $description, $srcMatches)) {
 				$src = $srcMatches[1];

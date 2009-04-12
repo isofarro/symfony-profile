@@ -23,7 +23,7 @@ HTML;
 		{$photoItems}
 		</ol>
 	</div>
-	<div class"ft"></div>
+	<div class="ft"></div>
 </div>
 HTML;
 }
