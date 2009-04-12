@@ -41,7 +41,7 @@ class Item extends BaseItem
 		// Link HTTP Urls
 		$description = preg_replace(
 			'/(https?:\/\/[^ ]+)/i', 
-			'<a href="$1">[link]</a>',
+			'<a href="$1" rel="nofollow">[link]</a>',
 			$description
 		);
 
@@ -55,7 +55,7 @@ class Item extends BaseItem
 				// Link twitterer
 				$description = preg_replace(
 					'/^([^:]+):/', 
-					'<a href="http://twitter.com/$1">$1</a>:',
+					'<a href="http://twitter.com/$1" rel="nofollow">$1</a>:',
 					$description
 				);
 			}
@@ -64,7 +64,7 @@ class Item extends BaseItem
 		// Link Twitter usernames		
 		$description = preg_replace(
 			'/@([a-z0-9-_]+)/i', 
-			'<a href="http://twitter.com/$1">@$1</a>',
+			'<a href="http://twitter.com/$1" rel="nofollow">@$1</a>',
 			$description
 		);
 
@@ -72,7 +72,7 @@ class Item extends BaseItem
 		// Twitter search shortcut
 		$description = preg_replace(
 			'/#([a-z0-9-_]+)/i', 
-			'<a href="http://search.twitter.com/search?q=%23$1">#$1</a>',
+			'<a href="http://search.twitter.com/search?q=%23$1" rel="nofollow">#$1</a>',
 			$description
 		);
 		
