@@ -15,15 +15,17 @@ class BaseFeedFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'title' => new sfWidgetFormFilterInput(),
-      'link'  => new sfWidgetFormFilterInput(),
-      'type'  => new sfWidgetFormFilterInput(),
+      'title'   => new sfWidgetFormFilterInput(),
+      'link'    => new sfWidgetFormFilterInput(),
+      'website' => new sfWidgetFormFilterInput(),
+      'type'    => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'title' => new sfValidatorPass(array('required' => false)),
-      'link'  => new sfValidatorPass(array('required' => false)),
-      'type'  => new sfValidatorPass(array('required' => false)),
+      'title'   => new sfValidatorPass(array('required' => false)),
+      'link'    => new sfValidatorPass(array('required' => false)),
+      'website' => new sfValidatorPass(array('required' => false)),
+      'type'    => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('feed_filters[%s]');
@@ -41,10 +43,11 @@ class BaseFeedFormFilter extends BaseFormFilterPropel
   public function getFields()
   {
     return array(
-      'id'    => 'Number',
-      'title' => 'Text',
-      'link'  => 'Text',
-      'type'  => 'Text',
+      'id'      => 'Number',
+      'title'   => 'Text',
+      'link'    => 'Text',
+      'website' => 'Text',
+      'type'    => 'Text',
     );
   }
 }

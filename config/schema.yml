@@ -16,6 +16,9 @@ propel:
          type: varchar(255)
          required: true
          index: unique
+      website:
+         type: varchar(255)
+         required: true
       type:
          type: varchar(32)
 

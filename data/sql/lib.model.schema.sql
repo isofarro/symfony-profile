@@ -30,6 +30,7 @@ CREATE TABLE `feed`
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`title` VARCHAR(255),
 	`link` VARCHAR(255)  NOT NULL,
+	`website` VARCHAR(255)  NOT NULL,
 	`type` VARCHAR(32),
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `feed_U_1` (`link`)
