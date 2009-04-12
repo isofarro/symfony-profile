@@ -1,4 +1,9 @@
 # default values
 all:
     default_site: 1
+    max_default: 20
+    max_blog:    20
+    max_photos:  20
+    max_micro:   10
+    max_links:   10
 

@@ -1,0 +1,325 @@
+/*reset.css*/body{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup,sub{line-height:-1px;vertical-align:text-top;}sub{vertical-align:text-bottom;}input, textarea, select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*fonts.css*/body {font:13px/1.22 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}table {font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:99%;}
+
+body {
+	background: #535384;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.site {
+	font-family: Palatino, Georgia, "Lucida Sans Unicode", lucida, serif;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 200%;
+}
+
+h3 {
+	font-size: 180%;
+}
+
+h4 {
+	font-size: 160%;
+}
+
+h5 {
+	font-size: 140%;
+}
+
+h6 {
+	font-size: 125%;
+}
+
+/* TODO: link colours: :link :active :hover :focus */
+
+a {
+	color: #557799;
+}
+
+a:hover, 
+a:focus, 
+a:active {
+	text-decoration: underline;
+}
+
+
+p {
+	margin: 0.5em 0;
+}
+
+pre {
+	margin-bottom: 1em;
+	line-height: 1.4;
+	padding: 0 1em;
+}
+
+em {
+	font-weight: bold;
+}
+
+p code {
+	color: #222;
+}
+
+
+/****************************************************************************
+*
+* Page layout
+*
+****************************************************************************/
+
+#page {
+	background: #fff;
+	color: #4e4e4e;
+	width: 970px;
+	margin: 24px auto;
+	overflow: hidden;
+}
+
+#content {
+	float: left;
+	width: 640px;
+	margin: 0 10px 10px 0;
+	padding: 20px 0 0 10px;
+	
+	border-top: 4px solid #535384;
+}
+
+#related {
+	color: #666;
+	float: left;
+	width: 290px;
+	margin-bottom: 10px;
+	padding: 20px 10px 0 10px;
+
+	border-top: 4px solid #6C6CAB;
+}
+
+#foot {
+	clear: both;
+	overflow: hidden;
+}
+
+/****************************************************************************
+*
+* Header styles
+*
+****************************************************************************/
+
+#head {
+	overflow: hidden;
+	padding: 16px 10px 20px 10px;
+}
+
+#head h1, 
+#head .site {
+	font-size: 3.5em;
+	color: #000;
+}
+
+#head .site {
+	display: block;
+	text-decoration: none;
+}
+
+#head .site:hover, 
+#head .site:active {
+	text-decoration: underline;
+} 
+
+#head p {
+	margin: -3px 0 0 0;
+	color: #777;
+}
+
+/**********************************************************************
+*
+* .mod styles
+*
+**********************************************************************/
+
+.mod {
+	margin-bottom: 20px;
+}
+
+.mod .bd {
+	line-height: 1.4;
+}
+
+#content .mod {
+	margin-right: 10px;
+}
+
+#content .mod h1, 
+#content .mod .hd h2 {
+	font-size: 220%;
+}
+
+#content .mod h1 a,
+#content .mod .hd h2 a {
+	color: #535384;
+	text-decoration: none;
+}
+
+#content .mod .bd {
+	font-size: 116%;
+}
+
+#content .mod .mod .bd {
+	font-size: 100%;
+}
+
+#content .mod .bd ul,
+#content .mod .bd ol {
+	margin: 1em 0;
+}
+#content .mod .bd ul li {
+	list-style: disc outside;
+}
+
+#content .mod .bd ol li {
+	list-style: decimal outside;
+}
+
+#content .mod .bd li {
+	margin-left: 1.5em;
+}
+
+/**********************************************************************
+*
+* .blog mod styles
+*
+**********************************************************************/
+
+.blog .published {
+	color: #777;
+	line-height: 1.22;
+	display: block;
+}
+
+.blog .hd, 
+.blog .ft {
+	border-bottom: 1px dotted #ccc;
+}
+
+.blog .bd {
+	padding: 0;
+}
+
+.blog .ft {
+	text-align: right;
+	padding: 0 0 4px;
+	margin-top: -10px;
+}
+
+/**********************************************************************
+*
+* .gallery mod styles
+*
+**********************************************************************/
+
+.gallery .bd {
+	overflow: hidden;
+	padding: 0;
+}
+
+#content .gallery .bd ol,
+.gallery .bd ol {
+	margin: 0;
+}
+
+#content .gallery .bd li,
+.gallery .bd li {
+	width: auto;
+	float: left;
+	margin: 0;
+	padding: 10px;
+}
+
+/* When Javascript is available */
+.gallery .bd {
+	clip: rect(0, 570px, 0, 95px);
+	height: 95px;
+	width: 570px;
+	border: 1px solid #6C6CAB;
+	border-width: 1px 0;
+}
+
+
+/**********************************************************************
+*
+* sidebar styles
+*
+**********************************************************************/
+
+#related a {
+	text-decoration: none;
+}
+
+#related a:focus, 
+#related a:hover, 
+#related a:active {
+	text-decoration: underline;
+}
+
+#related h2 {
+	color: #6C6CAB;
+	font-size: 1.3em;
+}
+
+#related h3 {
+	font-size: 1.1em;
+	font-weight: normal;
+}
+
+#related li {
+	border-bottom: 1px dotted #ddd;
+	margin-bottom: 5px;
+	padding: 5px 10px 5px 0;
+}
+
+#related p {
+	margin: 0;
+}
+
+.tweets .when span {
+	position: absolute;
+	left: -999em;
+}
+
+.tweets li .when {
+	color: #fff;
+}
+
+.tweets li:hover .when,
+.tweets .when:focus {
+	color: #557799;
+}
+
+/**********************************************************************
+*
+* footer styles
+*
+**********************************************************************/
+
+#foot {
+	background: #C3C1DD;
+	color: #333;
+	padding: 5px 10px;
+	text-align: right;
+}
+
+#y-foot p {
+	float: left;
+}
+
+#foot a {
+	color: #557799;
+	text-decoration: none;
+}
+
+
+
+
+

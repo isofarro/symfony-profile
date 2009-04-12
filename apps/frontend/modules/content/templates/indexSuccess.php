@@ -1,3 +1,5 @@
+	<div id="content">
+		<!-- Start of main content -->
 <?php
 
 /* Photos */
@@ -9,20 +11,23 @@ if (!empty($entries['photos'])) {
 		$photoItems[] =  <<<HTML
 		<li>{$text}</li>
 HTML;
+		break;
 	}
 	
 	$photoItems = implode("\n", $photoItems);	
 	
 	echo <<<HTML
-<div class="mod photos">
-	<h2 class="hd">Photos</h2>
-	<ul class="bd">
+<div class="mod gallery">
+	<div class="hd"></div>
+	<div class="bd">
+		<ol>
 		{$photoItems}
-	</ul>
+		</ol>
+	</div>
+	<div class"ft"></div>
 </div>
 HTML;
 }
-
 
 /* Long-form blog entries */
 if (!empty($entries['blog'])) {
@@ -34,10 +39,10 @@ if (!empty($entries['blog'])) {
 		
 		$site    = $items->getFeed()->getTitle(); 
 		echo <<<HTML
-<div class="mod">
+<div class="mod blog">
 	<div class="hd">
-		<h2 class="hd"><a href="{$link}">{$title}</a></h2>
-		<p>From: {$site} on {$date}</p>
+		<h2><a href="{$link}">{$title}</a></h2>
+		<span class="published"><em><a href="#TODO">{$site}</a></em> on {$date}</span>
 	</div>
 	<div class="bd">
 		{$extract}
@@ -50,6 +55,15 @@ if (!empty($entries['blog'])) {
 HTML;
 	}
 }
+?>
+
+		<!-- End of main content -->
+	</div>
+	<div id="related">
+		<!-- Start related -->
+
+
+<?php
 
 /* Micro-blogging entries */
 if (!empty($entries['micro'])) {
@@ -60,7 +74,7 @@ if (!empty($entries['micro'])) {
 		$date    = $items->getPublished('H:i D n M Y');		
 		 
 		$microItems[] =  <<<HTML
-		<li>{$text} <span>at <a href="{$link}">{$date}</a></span></li>
+		<li>{$text} <a href="{$link}" class="when">#<span>{$date}</span></a></li>
 HTML;
 	}
 	
@@ -69,7 +83,7 @@ HTML;
 	echo <<<HTML
 <div class="mod">
 	<h2 class="hd">Latest tweets:</h2>
-	<ul class="bd">
+	<ul class="bd tweets">
 		{$microItems}
 	</ul>
 </div>
@@ -110,22 +124,6 @@ HTML;
 HTML;
 }
 
-/****
-foreach($entries as $collection => $items) {
-	echo "<h2>{$collection}</h2>\n";
-	
-	echo "<ul>\n";
-	foreach($items as $item) {
-		echo '<li><a href="',
-			$item->getLink(),
-			'">',
-			$item->getTitle(),
-			'</a></li>';
-	}
-	echo "</ul>\n";
-}
-****/
-
-//echo '<pre>', print_r($entries); echo '</pre>';
-
 ?>
+		<!-- End related -->
+	</div>
