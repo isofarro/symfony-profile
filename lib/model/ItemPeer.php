@@ -53,6 +53,14 @@ class ItemPeer extends BaseItemPeer {
 			array_push($sortedItems[$collection], $item);
 		}
 		
+		// Reduce the number of collection items
+		$defaultMax = sfConfig::get('app_max_default');
+		foreach($sortedItems as $key=>$collection) {
+			$max = sfConfig::get('app_max_' . $key, $defaultMax);
+			$sortedItems[$key] = 
+				array_slice($collection, 0, $max);
+		}
+		
 		return $sortedItems;
 	}
 	
