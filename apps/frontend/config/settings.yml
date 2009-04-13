@@ -22,7 +22,7 @@ test:
 all:
   .settings:
     # Form security secret (CSRF protection)
-    csrf_secret:       false     # Unique secret to enable CSRF protection or false to disable
+    csrf_secret:       POIUYTREWQ     # Unique secret to enable CSRF protection or false to disable
 
     # Output escaping settings
     escaping_strategy:      false            # Determines how variables are made available to templates. Accepted values: on, off.
