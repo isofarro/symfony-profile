@@ -11,6 +11,7 @@
 	<?php include_metas() ?>
 	
 	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="alternate" href="<?php echo url_for('content/index?sf_format=atom', true) ?>" title="Isofarro's blog posts" type="application/atom+xml" />
 </head>
 <body>
 

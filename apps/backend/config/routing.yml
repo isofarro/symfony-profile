@@ -1,3 +1,21 @@
+sitefeed:
+  class: sfPropelRouteCollection
+  options:
+    model:                Sitefeed
+    module:               sitefeed
+    prefix_path:          sitefeed
+    column:               id
+    with_wildcard_routes: true
+
+feed:
+  class: sfPropelRouteCollection
+  options:
+    model:                Feed
+    module:               feed
+    prefix_path:          feed
+    column:               id
+    with_wildcard_routes: true
+
 # default rules
 homepage:
   url:   /

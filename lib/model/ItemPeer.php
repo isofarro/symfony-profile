@@ -63,5 +63,33 @@ class ItemPeer extends BaseItemPeer {
 		
 		return $sortedItems;
 	}
+
+	/**
+	* Gets the latest blog post.
+	* @param $site_id - the id of the site
+	* @param $type (Optional) - the type of post, defaults to blog
+	* @return $post - the latest blog post
+	**/
+	public static function getLatestSiteItem($site_id, $type='blog') {
+		$itemCriteria = new Criteria();
+		
+		// Get an item belonging to the site feed
+		$itemCriteria->addJoin(
+			self::FEED_ID, 
+			SitefeedPeer::FEED_ID, 
+			Criteria::LEFT_JOIN
+		);
+		$itemCriteria->add(SitefeedPeer::SITE_ID,	$site_id, Criteria::IN);
+		
+		$itemCriteria->add(SitefeedPeer::COLLECTION, $type, Criteria::EQUAL);
+
+		// order by published date Descending
+		$itemCriteria->addDescendingOrderByColumn(self::PUBLISHED);
+		
+		// Bring in the item data plus the feed data for each item.
+		return self::doSelectOne($itemCriteria);
+		return $items;
+	}
+	
 	
 }
