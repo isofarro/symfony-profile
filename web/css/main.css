@@ -31,8 +31,6 @@ h6 {
 	font-size: 125%;
 }
 
-/* TODO: link colours: :link :active :hover :focus */
-
 a {
 	color: #557799;
 }
@@ -82,7 +80,6 @@ p code {
 	width: 640px;
 	margin: 0 10px 10px 0;
 	padding: 20px 0 0 10px;
-	
 	border-top: 4px solid #535384;
 }
 
@@ -92,7 +89,6 @@ p code {
 	width: 290px;
 	margin-bottom: 10px;
 	padding: 20px 10px 0 10px;
-
 	border-top: 4px solid #6C6CAB;
 }
 
@@ -170,21 +166,6 @@ p code {
 	font-size: 100%;
 }
 
-#content .mod .bd ul,
-#content .mod .bd ol {
-	margin: 1em 0;
-}
-#content .mod .bd ul li {
-	list-style: disc outside;
-}
-
-#content .mod .bd ol li {
-	list-style: decimal outside;
-}
-
-#content .mod .bd li {
-	margin-left: 1.5em;
-}
 
 /**********************************************************************
 *
@@ -213,6 +194,23 @@ p code {
 	margin-top: -10px;
 }
 
+.blog .bd ul,
+.blog .bd ol {
+	margin: 1em 0;
+}
+.blog .bd ul li {
+	list-style: disc outside;
+}
+
+.blog .bd ol li {
+	list-style: decimal outside;
+}
+
+.blog .bd li {
+	margin-left: 1.5em;
+}
+
+
 /**********************************************************************
 *
 * .gallery mod styles
@@ -222,30 +220,63 @@ p code {
 .gallery .bd {
 	overflow: hidden;
 	padding: 0;
-}
-
-#content .gallery .bd ol,
-.gallery .bd ol {
-	margin: 0;
-}
-
-#content .gallery .bd li,
-.gallery .bd li {
-	width: auto;
-	float: left;
-	margin: 0;
-	padding: 10px;
-}
-
-/* When Javascript is available */
-.gallery .bd {
-	clip: rect(0, 570px, 0, 95px);
-	height: 95px;
-	width: 570px;
 	border: 1px solid #6C6CAB;
 	border-width: 1px 0;
 }
 
+.gallery .bd ul,
+.gallery .bd ol {
+	margin: 0 auto;
+	width: 570px;
+	overflow: hidden;
+}
+
+.gallery .bd li {
+	float: left;
+	width: 75px;
+	margin: 0;
+	padding: 10px;
+	list-style-type: none;
+}
+
+.gallery div.bd {
+	height: 95px;
+}
+
+/* When Javascript is available */
+.gallery fieldset.bd {
+	overflow: hidden;
+}
+
+.gallery legend {
+	display: block;
+	float: left;
+	font-size: 1px;
+	text-indent: -999em;
+	width: 0;
+}
+
+.gallery button {
+	width: 30px;
+	height: 75px;
+	margin-top: 10px;
+	float: left;
+}
+
+.gallery .inner {
+	width: 570px;
+	height: 95px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+.gallery .inner ul,
+.gallery .inner ol {
+	position: relative;
+	width: 100000px;
+	height: 95px;
+}
 
 /**********************************************************************
 *
@@ -308,10 +339,6 @@ p code {
 	color: #333;
 	padding: 5px 10px;
 	text-align: right;
-}
-
-#y-foot p {
-	float: left;
 }
 
 #foot a {

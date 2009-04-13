@@ -8,8 +8,10 @@
 	<?php include_http_metas() ?>
 	<?php include_metas() ?>
 	
-	<link rel="stylesheet" href="profile.css" media="screen"/>
 	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<script type="text/javascript" src="/js/yahoo-dom-event-anim.js"></script>
+	<script type="text/javascript" src="/js/profile.js"></script>
 </head>
 <body>
 

@@ -16,12 +16,12 @@ HTML;
 	$photoItems = implode("\n", $photoItems);	
 	
 	echo <<<HTML
-<div class="mod gallery">
+<div id="myPhotos" class="mod gallery">
 	<div class="hd"></div>
 	<div class="bd">
-		<ol>
+		<ul>
 		{$photoItems}
-		</ol>
+		</ul>
 	</div>
 	<div class="ft"></div>
 </div>
