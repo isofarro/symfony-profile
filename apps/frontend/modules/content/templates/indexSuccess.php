@@ -4,6 +4,10 @@
 
 /* Photos */
 if (!empty($entries['photos'])) {
+	// Bring in the JavaScript to power the gallery
+	use_javascript('yahoo-dom-event-anim.js');
+	use_javascript('profile.js');
+
 	$photoItems = array();
 	foreach ($entries['photos'] as $items) {
 		$text    = $items->getPhotoImage();

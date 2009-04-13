@@ -3,15 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Isofarro</title>
-	<?php include_title() ?>
-	<?php include_http_metas() ?>
+	<title><?php 
+		if (!include_slot('title')): 
+			echo "Isofarro";
+		endif;
+	?></title>
 	<?php include_metas() ?>
 	
 	<link rel="shortcut icon" href="/favicon.ico" />
-
-	<script type="text/javascript" src="/js/yahoo-dom-event-anim.js"></script>
-	<script type="text/javascript" src="/js/profile.js"></script>
 </head>
 <body>
 
