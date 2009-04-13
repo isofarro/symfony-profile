@@ -47,7 +47,7 @@ class FormattingUtils {
 
 		// Link HTTP Urls
 		$post = preg_replace(
-			'/(https?:\/\/[^ )]+)/i', 
+			'/(https?:\/\/[^ )}\]]+)/i', 
 			'<a href="$1" rel="nofollow">[link]</a>',
 			$post
 		);

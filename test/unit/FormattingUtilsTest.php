@@ -38,6 +38,7 @@ $t->is(
 );
 
 
+// Bug when link is wrapped in a round bracket
 $t->is(
 	FormattingUtils::tweetify("anon_tweet: (http://example.com/)", true), 
 	'(<a href="http://example.com/" rel="nofollow">[link]</a>)'
