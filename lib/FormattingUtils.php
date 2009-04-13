@@ -47,7 +47,7 @@ class FormattingUtils {
 
 		// Link HTTP Urls
 		$post = preg_replace(
-			'/(https?:\/\/[^ ]+)/i', 
+			'/(https?:\/\/[^ )]+)/i', 
 			'<a href="$1" rel="nofollow">[link]</a>',
 			$post
 		);
@@ -57,7 +57,7 @@ class FormattingUtils {
 		if ($selfPos !== false) {
 			if ($trimSelf) {
 				// Remove self-identifier
-				$post = substr($post, $selfPos+1);
+				$post = substr($post, $selfPos+2);
 			} else { 
 				// Link twitterer
 				$post = preg_replace(
