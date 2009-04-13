@@ -1,0 +1,3 @@
+[submodule "./lib/php5-feed-parser"]
+	path = ./lib/php5-feed-parser
+	url = git://github.com/isofarro/php5-feed-parser-and-normaliser.git

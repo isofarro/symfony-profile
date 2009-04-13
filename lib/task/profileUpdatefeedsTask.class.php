@@ -118,8 +118,7 @@ EOF;
 	**/
 	protected function getFeed($feedUrl) {
 		if (empty($this->parser)) {
-			// TODO: Bring the FeedParser into the lib directory when complete
-			require_once('/home/isofarro/projects/php5-feed-parser-and-normaliser/FeedParser.php');
+			require_once 'lib/php5-feed-parser/FeedParser.php';
 			$this->parser = new FeedParser();
 		}
 		
