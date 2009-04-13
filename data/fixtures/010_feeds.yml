@@ -5,6 +5,12 @@ Feed:
         website: http://twitter.com/isofarro_public
         type: summary
         
+    twitter_favourites:
+        title: Isofarro's Tweets
+        link: http://twitter.com/favorites/15039921.atom
+        website: http://twitter.com/isofarro_public
+        type: summary
+
     flickr:
         title: Isofarro's pictures
         link: http://api.flickr.com/services/feeds/photos_public.gne?id=30516977@N00&lang=en-us&format=atom

@@ -93,6 +93,33 @@ HTML;
 ?>
 
 <?php
+/* Micro-blogging entries */
+if (!empty($entries['microfave'])) {
+	$microItems = array();
+	foreach ($entries['microfave'] as $items) {
+		$link    = $items->getLink();
+		$text    = $items->getTweet();
+		$date    = $items->getPublished('H:i D n M Y');		
+		 
+		$microItems[] =  <<<HTML
+		<li>{$text} <a href="{$link}" class="when">#<span> {$date}</span></a></li>
+HTML;
+	}
+	
+	$microItems = implode("\n", $microItems);	
+	
+	echo <<<HTML
+<div class="mod">
+	<h2 class="hd">Favoured tweets:</h2>
+	<ul class="bd tweets">
+		{$microItems}
+	</ul>
+</div>
+HTML;
+}
+?>
+
+<?php
 /* Bookmarks */
 if (!empty($entries['links'])) {
 	$bookmarks = array();

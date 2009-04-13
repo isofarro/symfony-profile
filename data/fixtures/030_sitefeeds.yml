@@ -39,4 +39,9 @@ Sitefeed:
       feed_id: isolani_links
       collection: links
       
+   isofarro_9:
+      site_id: isofarro
+      feed_id: twitter_favourites
+      collection: microfave
+      
    
