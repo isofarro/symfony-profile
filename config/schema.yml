@@ -53,7 +53,6 @@ propel:
       link:
          type: varchar(255)
          required: true
-         index: unique
       description:
          type: longvarchar
          required: true
